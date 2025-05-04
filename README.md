@@ -33,20 +33,22 @@ REVOKE RESOURCE FROM test_user;
 DROP USER test_user CASCADE;
 ```
 
-**Use case**: Retrieving all employees in the HR department.
-
 ---
 
-## 2. INSERT – Inserting Data
-
-Used for adding new records to the table.
+## 2. Table Management
 
 ```sql
-INSERT INTO employees (name, department, salary)
-VALUES ('John Doe', 'Finance', 60000);
+CREATE TABLE employees (
+  id NUMBER PRIMARY KEY,
+  name VARCHAR2(100),
+  salary NUMBER
+);
+INSERT INTO employees VALUES (1, 'John', 5000);
+UPDATE employees SET salary = 6000 WHERE id = 1;
+DELETE FROM employees WHERE id = 1;
+DROP TABLE employees;
 ```
 
-**Use case**: Adding a new employee to the database.
 
 ---
 
