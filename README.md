@@ -98,69 +98,76 @@ impdp system/password FULL=Y DIRECTORY=dpdump DUMPFILE=full.dmp LOGFILE=imp.log
 
 ---
 
-## 7. DROP TABLE – Deleting a Table
-
-Used to delete a table from the database.
+## 7.  Scheduled Jobs
 
 ```sql
-DROP TABLE employees;
+BEGIN
+  DBMS_SCHEDULER.CREATE_JOB (
+    job_name        => 'my_job',
+    job_type        => 'PLSQL_BLOCK',
+    job_action      => 'BEGIN NULL; END;',
+    start_date      => SYSTIMESTAMP,
+    repeat_interval => 'FREQ=DAILY; BYHOUR=1',
+    enabled         => TRUE
+  );
+END;
+/
 ```
 
-**Use case**: Deleting the `employees` table permanently.
 
 ---
 
-## 8. JOIN – Combining Data from Multiple Tables
+## 8. PL/SQL Basics
 
-Used to retrieve data from multiple related tables.
 
 ```sql
-SELECT employees.name, departments.department_name
-FROM employees
-INNER JOIN departments
-ON employees.department_id = departments.id;
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Hello, World!');
+END;
+/
+
+DECLARE
+  v_name VARCHAR2(50);
+BEGIN
+  v_name := 'Oracle';
+  DBMS_OUTPUT.PUT_LINE(v_name);
+END;
+/
 ```
 
-**Use case**: Displaying employee names and their department names.
 
 ---
 
-## 9. INDEX – Speeding up Searches
-
-Used to improve query performance on large tables.
+## 9. Index Management
 
 ```sql
-CREATE INDEX idx_salary ON employees(salary);
+CREATE INDEX emp_name_idx ON employees(name);
+DROP INDEX emp_name_idx;
 ```
 
-**Use case**: Creating an index on the `salary` column to speed up queries.
 
 ---
 
-## 10. TRANSACTION – Managing Multiple Operations
+## 10. Constraints
 
-Ensures a group of operations are completed together or not at all.
 
 ```sql
-BEGIN TRANSACTION;
-UPDATE employees SET salary = salary + 5000 WHERE department = 'Finance';
-DELETE FROM employees WHERE name = 'John Doe';
-COMMIT;
+ALTER TABLE employees ADD CONSTRAINT emp_pk PRIMARY KEY (id);
+ALTER TABLE employees ADD CONSTRAINT dept_fk FOREIGN KEY (dept_id) REFERENCES departments(id);
+ALTER TABLE employees DROP CONSTRAINT emp_pk;
 ```
 
-**Use case**: Updating and deleting within a secure transaction.
 
 ---
 
-## 11. GRANT – Giving Permissions
+## 11. Views
 
-Used to provide access rights to a user.
+
 
 ```sql
-GRANT SELECT, INSERT ON employees TO user1;
+CREATE VIEW emp_view AS SELECT id, name FROM employees;
+DROP VIEW emp_view;
 ```
-
-**Use case**: Granting permissions on the `employees` table to `user1`.
 
 ---
 
