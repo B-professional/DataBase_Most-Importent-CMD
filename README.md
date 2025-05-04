@@ -86,19 +86,15 @@ RESTORE DATABASE;
 RECOVER DATABASE;
 ```
 
-**Use case**: Creating an `employees` table to store employee information.
-
 ---
 
-## 6. ALTER TABLE – Modifying Table Structure
+## 6. Export/Import using Data Pump
 
-Used to modify the structure of an existing table.
 
 ```sql
-ALTER TABLE employees ADD COLUMN hire_date DATE;
+expdp system/password FULL=Y DIRECTORY=dpdump DUMPFILE=full.dmp LOGFILE=full.log
+impdp system/password FULL=Y DIRECTORY=dpdump DUMPFILE=full.dmp LOGFILE=imp.log
 ```
-
-**Use case**: Adding a `hire_date` column to the `employees` table.
 
 ---
 
