@@ -6,7 +6,7 @@ A comprehensive guide for Oracle SQL and DBA tasks. Includes user management, pe
 ---
 
 ## 📂 Sections
-- [User Management](1. User Management)
+- [User Management](#1. User Management)
 - Table Management
 - Tablespace Management
 - Performance & Monitoring
