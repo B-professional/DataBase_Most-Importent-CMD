@@ -1,13 +1,28 @@
 
-# Real-Life Database Commands
+# 🛠️ Oracle Database Commands Cheat Sheet
 
-This document lists important SQL commands used in real-life database scenarios with examples and use cases.
+A comprehensive guide for Oracle SQL and DBA tasks. Includes user management, performance tuning, backup, and real-world scripts—ideal for support engineers and interview prep.
 
 ---
 
-## 1. SELECT – Retrieving Data
-
-Used for querying the database to retrieve data.
+## 📂 Sections
+- User Management
+- Table Management
+- Tablespace Management
+- Performance & Monitoring
+- Backup and Recovery (RMAN)
+- Export/Import (Data Pump)
+- Scheduled Jobs
+- PL/SQL Basics
+- Index Management
+- Constraints
+- Views
+- Synonyms
+- Sequences
+- Triggers
+- Materialized Views
+- Real-life DBA Scripts & Interview Tips
+- Used for querying the database to retrieve data.
 
 ```sql
 SELECT * FROM employees WHERE department = 'HR';
