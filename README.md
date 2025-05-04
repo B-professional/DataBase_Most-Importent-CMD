@@ -52,43 +52,38 @@ DROP TABLE employees;
 
 ---
 
-## 3. UPDATE – Modifying Data
+## 3. Tablespace Management
 
-Used to modify existing records in the database.
 
 ```sql
-UPDATE employees
-SET salary = 65000
-WHERE name = 'John Doe';
+CREATE TABLESPACE myspace DATAFILE 'myspace.dbf' SIZE 100M AUTOEXTEND ON;
+ALTER TABLESPACE myspace ADD DATAFILE 'myspace2.dbf' SIZE 50M;
+DROP TABLESPACE myspace INCLUDING CONTENTS AND DATAFILES;
 ```
 
-**Use case**: Updating the salary of an employee.
 
 ---
 
-## 4. DELETE – Removing Data
-
-Used to delete records from the database.
+## 4. Performance & Monitoring
 
 ```sql
-DELETE FROM employees WHERE department = 'HR';
+SELECT SID, SERIAL#, USERNAME, STATUS FROM V$SESSION;
+ALTER SYSTEM KILL SESSION 'SID,SERIAL#';
+SELECT * FROM V$SESSION_LONGOPS;
+SELECT * FROM V$SYSSTAT;
 ```
 
-**Use case**: Deleting employees from the HR department.
 
 ---
 
-## 5. CREATE TABLE – Creating a New Table
-
-Used to create a new table in the database.
+## 5.  Backup and Recovery (RMAN)
 
 ```sql
-CREATE TABLE employees (
-    id INT PRIMARY KEY,
-    name VARCHAR(100),
-    department VARCHAR(50),
-    salary DECIMAL(10, 2)
-);
+-- RMAN TARGET /
+BACKUP DATABASE;
+BACKUP TABLESPACE users;
+RESTORE DATABASE;
+RECOVER DATABASE;
 ```
 
 **Use case**: Creating an `employees` table to store employee information.
