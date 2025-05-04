@@ -24,8 +24,13 @@ A comprehensive guide for Oracle SQL and DBA tasks. Includes user management, pe
 - Real-life DBA Scripts & Interview Tips
 - Used for querying the database to retrieve data.
 
+## 1. User Management
+
 ```sql
-SELECT * FROM employees WHERE department = 'HR';
+CREATE USER test_user IDENTIFIED BY password;
+GRANT CONNECT, RESOURCE TO test_user;
+REVOKE RESOURCE FROM test_user;
+DROP USER test_user CASCADE;
 ```
 
 **Use case**: Retrieving all employees in the HR department.
