@@ -13,13 +13,13 @@ A comprehensive guide for Oracle SQL and DBA tasks. Includes user management, pe
 - [Backup and Recovery (RMAN)](#5-Backup-and-Recovery(RMAN))
 - [Export/Import (Data Pump)](#6-Export/Import-(Data-Pump))
 - [Scheduled Jobs](#7-Scheduled-Jobs)
-- PL/SQL Basics
-- Index Management
-- Constraints
-- Views
-- Synonyms
-- Sequences
-- Triggers
+- [PL/SQL Basics](#6-PL/SQL-Basics)
+- [Index Management](#7-Index-Management)
+- [Constraints](#8-Constraints)
+- [Views](#9-Views)
+- [Synonyms](#10-Synonyms)
+- [Sequences](#11-Sequences)
+- [Triggers](#12-Triggers)
 - Materialized Views
 - Real-life DBA Scripts & Interview Tips
 - Used for querying the database to retrieve data.
