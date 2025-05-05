@@ -11,7 +11,7 @@ A comprehensive guide for Oracle SQL and DBA tasks. Includes user management, pe
 - [Tablespace Management](#3-Tablespace-Management)
 - [Performance & Monitoring](#4-Performance-&-Monitoring)
 - [Backup and Recovery (RMAN)](#5-Backup-and-Recovery(RMAN))
-- [Export/Import (Data Pump)](#)
+- [Export/Import (Data Pump)](#6-Export/Import-(Data-Pump))
 - Scheduled Jobs
 - PL/SQL Basics
 - Index Management
