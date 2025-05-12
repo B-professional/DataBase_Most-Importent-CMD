@@ -77,9 +77,9 @@ SELECT * FROM V$SYSSTAT;
 ---
 
 ## 5.  Backup and Recovery (RMAN)
-
-```sql
 -- RMAN TARGET /
+```sql
+
 BACKUP DATABASE;
 BACKUP TABLESPACE users;
 RESTORE DATABASE;
