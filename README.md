@@ -334,6 +334,95 @@ Adds a new salary column to the employees table.
 sql
 DROP TABLE employees;
 Completely removes the employees table.
+
+Stored Procedures
+Stored procedures help encapsulate SQL logic for reuse.
+
+1. Creating a stored procedure
+
+sql
+CREATE PROCEDURE GetEmployeeDetails
+AS
+BEGIN
+    SELECT * FROM employees;
+END;
+Creates a stored procedure that retrieves all employee details.
+
+2. Executing a stored procedure
+
+sql
+EXEC GetEmployeeDetails;
+Runs the stored procedure to fetch employee data.
+
+Indexing (Performance Optimization)
+Indexes improve query performance by speeding up lookups.
+
+3. Creating an index
+
+sql
+CREATE INDEX idx_employee_name 
+ON employees (name);
+Creates an index on the name column for faster searches.
+
+4. Removing an index
+
+sql
+DROP INDEX idx_employee_name ON employees;
+Deletes the index from the name column.
+
+Security & Permissions
+User control and security in databases.
+
+5. Creating a user
+
+sql
+CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password123';
+Adds a new database user with a password.
+
+6. Granting privileges
+
+sql
+GRANT SELECT, INSERT ON employees TO 'new_user'@'localhost';
+Allows the user to view and insert data into the employees table.
+
+7. Revoking privileges
+
+sql
+REVOKE INSERT ON employees FROM 'new_user'@'localhost';
+Removes insert permissions for the user.
+
+Triggers (Automated Actions)
+Triggers execute predefined actions when certain events occur.
+
+8. Creating a trigger
+
+sql
+CREATE TRIGGER before_insert_employee
+BEFORE INSERT ON employees
+FOR EACH ROW
+BEGIN
+    SET NEW.created_at = NOW();
+END;
+Before inserting an employee, this trigger automatically sets the timestamp.
+
+Transactions (Ensuring Data Integrity)
+Transactions allow multiple queries to run safely.
+
+9. Starting and committing a transaction
+
+sql
+START TRANSACTION;
+DELETE FROM employees WHERE department = 'HR';
+COMMIT;
+Ensures the deletion is only committed once all steps are successful.
+
+10. Rolling back a transaction
+
+sql
+START TRANSACTION;
+UPDATE employees SET salary = 100000 WHERE department = 'IT';
+ROLLBACK;
+If something goes wrong, the transaction rolls back instead of committing changes.
 ~~~
 
 > 👨‍💻 Author
