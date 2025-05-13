@@ -258,6 +258,84 @@ SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTED_ROLE = 'DBA';
 
 ---
 
+-----------------------------------------------------------------
+~~~
+1. INSERT INTO – Adds new records to a table
+
+sql
+INSERT INTO employees (id, name, age, department) 
+VALUES (1, 'John Doe', 30, 'HR');
+Adds an employee named John Doe to the employees table.
+
+2. UPDATE – Modifies existing records
+
+sql
+UPDATE employees 
+SET age = 31 
+WHERE id = 1;
+Updates the age of the employee with ID 1.
+
+3. DELETE – Removes records
+
+sql
+DELETE FROM employees 
+WHERE id = 1;
+Removes the employee with ID 1 from the table.
+
+Data Output Commands
+4. SELECT – Retrieves data
+
+sql
+SELECT name, age FROM employees WHERE department = 'HR';
+Gets the names and ages of employees in the HR department.
+
+5. ORDER BY – Sorts retrieved data
+
+sql
+SELECT * FROM employees ORDER BY age DESC;
+Retrieves all employees sorted by age in descending order.
+
+6. GROUP BY – Groups data for aggregation
+
+sql
+SELECT department, COUNT(*) AS total_employees 
+FROM employees 
+GROUP BY department;
+Groups employees by department and counts how many are in each department.
+
+7. JOIN – Combines data from multiple tables
+
+sql
+SELECT employees.name, departments.department_name 
+FROM employees 
+JOIN departments ON employees.department_id = departments.id;
+Joins employees and departments tables based on department ID.
+
+Additional SQL Commands
+8. CREATE TABLE – Creates a new table
+
+sql
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    department VARCHAR(50)
+);
+Creates a new employees table with various columns.
+
+9. ALTER TABLE – Modifies an existing table
+
+sql
+ALTER TABLE employees ADD COLUMN salary INT;
+Adds a new salary column to the employees table.
+
+10. DROP TABLE – Deletes a table
+
+sql
+DROP TABLE employees;
+Completely removes the employees table.
+~~~
+
 > 👨‍💻 Author
 > Bhavesh
 > 📜 License
