@@ -276,44 +276,44 @@ Updates the age of the employee with ID 1.
 ~~~
 ##3. DELETE – Removes records
 -------------------------------------------------------------
-sql
+~~~sql
 DELETE FROM employees 
 WHERE id = 1;
 Removes the employee with ID 1 from the table.
-
+~~~
 Data Output Commands
-4. SELECT – Retrieves data
+##4. SELECT – Retrieves data
 -----------------------------------------------------------
-sql
+~~~sql
 SELECT name, age FROM employees WHERE department = 'HR';
 Gets the names and ages of employees in the HR department.
-
-5. ORDER BY – Sorts retrieved data
+~~~
+##5. ORDER BY – Sorts retrieved data
 -------------------------------------------------------
-sql
+~~~sql
 SELECT * FROM employees ORDER BY age DESC;
 Retrieves all employees sorted by age in descending order.
-
-6. GROUP BY – Groups data for aggregation
+~~~
+##6. GROUP BY – Groups data for aggregation
 ----------------------------------------------------
-sql
+~~~sql
 SELECT department, COUNT(*) AS total_employees 
 FROM employees 
 GROUP BY department;
 Groups employees by department and counts how many are in each department.
-
-7. JOIN – Combines data from multiple tables
+~~~
+##7. JOIN – Combines data from multiple tables
 ------------------------------------------------------
-sql
+~~~sql
 SELECT employees.name, departments.department_name 
 FROM employees 
 JOIN departments ON employees.department_id = departments.id;
 Joins employees and departments tables based on department ID.
-
+~~~
 Additional SQL Commands
-8. CREATE TABLE – Creates a new table
+##8. CREATE TABLE – Creates a new table
 ----------------------------------------------------
-sql
+~~~sql
 CREATE TABLE employees (
     id INT PRIMARY KEY,
     name VARCHAR(50),
@@ -321,26 +321,26 @@ CREATE TABLE employees (
     department VARCHAR(50)
 );
 Creates a new employees table with various columns.
-
-9. ALTER TABLE – Modifies an existing table
+~~~
+##9. ALTER TABLE – Modifies an existing table
 --------------------------------------------------------
-sql
+~~~sql
 ALTER TABLE employees ADD COLUMN salary INT;
 Adds a new salary column to the employees table.
-
-10. DROP TABLE – Deletes a table
+~~~
+##. DROP TABLE – Deletes a table
 --------------------------------------------------------
-sql
+~~~sql
 DROP TABLE employees;
 Completely removes the employees table.
 Stored Procedures
 Stored procedures help encapsulate SQL logic for reuse.
-
+~~~
 -----------------------------------------------------------------
 -------------------------------------------------------------------
 ------------------------------------------------------------------
 
-1. Creating a stored procedure
+##1. Creating a stored procedure
 ---------------------------------------------------------------
 sql
 CREATE PROCEDURE GetEmployeeDetails
