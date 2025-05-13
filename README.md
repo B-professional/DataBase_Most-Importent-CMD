@@ -426,63 +426,48 @@ If something goes wrong, the transaction rolls back instead of committing change
 
 --------------------------------------------------------------------------------------------------
 Data Definition Language (DDL) – Managing Database Structure
+------------------------------------------------------------
 CREATE TABLE – Creates a new table
-
 ALTER TABLE – Modifies an existing table
-
 DROP TABLE – Deletes a table
-
 TRUNCATE TABLE – Removes all records from a table
-
 CREATE INDEX – Creates an index for faster searches
-
 DROP INDEX – Deletes an index
 
 Data Manipulation Language (DML) – Handling Data
+------------------------------------------------
 INSERT INTO – Adds new records
-
 UPDATE – Modifies existing records
-
 DELETE – Removes records
-
 MERGE – Combines insert, update, and delete operations
 
 Data Query Language (DQL) – Retrieving Data
+-------------------------------------------
 SELECT – Retrieves data from a table
-
 ORDER BY – Sorts retrieved data
-
 GROUP BY – Groups data for aggregation
-
 HAVING – Filters grouped data
-
 JOIN – Combines data from multiple tables
 
 Transaction Control Language (TCL) – Managing Transactions
+----------------------------------------------------------
 START TRANSACTION – Begins a transaction
-
 COMMIT – Saves changes permanently
-
 ROLLBACK – Reverts changes
-
 SAVEPOINT – Creates a checkpoint within a transaction
 
 Data Control Language (DCL) – Managing Permissions
+--------------------------------------------------
 GRANT – Assigns privileges to users
-
 REVOKE – Removes privileges from users
 
 Advanced SQL Commands
+----------------------------------------------------
 CREATE PROCEDURE – Defines a stored procedure
-
 EXEC – Executes a stored procedure
-
 CREATE TRIGGER – Defines an automated action
-
 WITH RECURSIVE – Enables recursive queries
-
 RANK() – Assigns ranks to rows
-
 LAG() & LEAD() – Compare previous and next row values
 ~~~
 
