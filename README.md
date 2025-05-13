@@ -258,23 +258,23 @@ SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTED_ROLE = 'DBA';
 ---
 
 -----------------------------------------------------------------
-~~~
-1. INSERT INTO – Adds new records to a table
+
+## 1. INSERT INTO – Adds new records to a table
 ---------------------------------------------------------------------
-sql
+~~~sql
 INSERT INTO employees (id, name, age, department) 
 VALUES (1, 'John Doe', 30, 'HR');
 Adds an employee named John Doe to the employees table.
-
-2. UPDATE – Modifies existing records
+~~~
+##2. UPDATE – Modifies existing records
 --------------------------------------------------------------
-sql
+~~~sql
 UPDATE employees 
 SET age = 31 
 WHERE id = 1;
 Updates the age of the employee with ID 1.
-
-3. DELETE – Removes records
+~~~
+##3. DELETE – Removes records
 -------------------------------------------------------------
 sql
 DELETE FROM employees 
