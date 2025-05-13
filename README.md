@@ -219,7 +219,6 @@ CREATE MATERIALIZED VIEW emp_mv AS SELECT * FROM employees;
 
 ## 16. Real-life DBA Scripts
 
-
 ```sql
 SELECT SUM(BYTES)/1024/1024/1024 AS SIZE_GB FROM DBA_DATA_FILES;
 SELECT OBJECT_NAME, OBJECT_TYPE FROM DBA_OBJECTS WHERE STATUS='INVALID';
@@ -261,14 +260,14 @@ SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTED_ROLE = 'DBA';
 -----------------------------------------------------------------
 ~~~
 1. INSERT INTO – Adds new records to a table
-
+---------------------------------------------------------------------
 sql
 INSERT INTO employees (id, name, age, department) 
 VALUES (1, 'John Doe', 30, 'HR');
 Adds an employee named John Doe to the employees table.
 
 2. UPDATE – Modifies existing records
-
+--------------------------------------------------------------
 sql
 UPDATE employees 
 SET age = 31 
@@ -276,7 +275,7 @@ WHERE id = 1;
 Updates the age of the employee with ID 1.
 
 3. DELETE – Removes records
-
+-------------------------------------------------------------
 sql
 DELETE FROM employees 
 WHERE id = 1;
@@ -284,19 +283,19 @@ Removes the employee with ID 1 from the table.
 
 Data Output Commands
 4. SELECT – Retrieves data
-
+-----------------------------------------------------------
 sql
 SELECT name, age FROM employees WHERE department = 'HR';
 Gets the names and ages of employees in the HR department.
 
 5. ORDER BY – Sorts retrieved data
-
+-------------------------------------------------------
 sql
 SELECT * FROM employees ORDER BY age DESC;
 Retrieves all employees sorted by age in descending order.
 
 6. GROUP BY – Groups data for aggregation
-
+----------------------------------------------------
 sql
 SELECT department, COUNT(*) AS total_employees 
 FROM employees 
@@ -304,7 +303,7 @@ GROUP BY department;
 Groups employees by department and counts how many are in each department.
 
 7. JOIN – Combines data from multiple tables
-
+------------------------------------------------------
 sql
 SELECT employees.name, departments.department_name 
 FROM employees 
@@ -313,7 +312,7 @@ Joins employees and departments tables based on department ID.
 
 Additional SQL Commands
 8. CREATE TABLE – Creates a new table
-
+----------------------------------------------------
 sql
 CREATE TABLE employees (
     id INT PRIMARY KEY,
@@ -324,22 +323,25 @@ CREATE TABLE employees (
 Creates a new employees table with various columns.
 
 9. ALTER TABLE – Modifies an existing table
-
+--------------------------------------------------------
 sql
 ALTER TABLE employees ADD COLUMN salary INT;
 Adds a new salary column to the employees table.
 
 10. DROP TABLE – Deletes a table
-
+--------------------------------------------------------
 sql
 DROP TABLE employees;
 Completely removes the employees table.
-
 Stored Procedures
 Stored procedures help encapsulate SQL logic for reuse.
 
-1. Creating a stored procedure
+-----------------------------------------------------------------
+-------------------------------------------------------------------
+------------------------------------------------------------------
 
+1. Creating a stored procedure
+---------------------------------------------------------------
 sql
 CREATE PROCEDURE GetEmployeeDetails
 AS
@@ -349,7 +351,7 @@ END;
 Creates a stored procedure that retrieves all employee details.
 
 2. Executing a stored procedure
-
+----------------------------------------------------
 sql
 EXEC GetEmployeeDetails;
 Runs the stored procedure to fetch employee data.
@@ -358,14 +360,14 @@ Indexing (Performance Optimization)
 Indexes improve query performance by speeding up lookups.
 
 3. Creating an index
-
+-------------------------------------------------------
 sql
 CREATE INDEX idx_employee_name 
 ON employees (name);
 Creates an index on the name column for faster searches.
 
 4. Removing an index
-
+-----------------------------------------------------
 sql
 DROP INDEX idx_employee_name ON employees;
 Deletes the index from the name column.
@@ -374,28 +376,27 @@ Security & Permissions
 User control and security in databases.
 
 5. Creating a user
-
+------------------------------------------------------
 sql
 CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password123';
 Adds a new database user with a password.
 
 6. Granting privileges
-
+------------------------------------------------------
 sql
 GRANT SELECT, INSERT ON employees TO 'new_user'@'localhost';
 Allows the user to view and insert data into the employees table.
 
 7. Revoking privileges
-
+-----------------------------------------------------
 sql
 REVOKE INSERT ON employees FROM 'new_user'@'localhost';
 Removes insert permissions for the user.
-
 Triggers (Automated Actions)
 Triggers execute predefined actions when certain events occur.
 
 8. Creating a trigger
-
+--------------------------------------------------
 sql
 CREATE TRIGGER before_insert_employee
 BEFORE INSERT ON employees
@@ -404,12 +405,11 @@ BEGIN
     SET NEW.created_at = NOW();
 END;
 Before inserting an employee, this trigger automatically sets the timestamp.
-
 Transactions (Ensuring Data Integrity)
 Transactions allow multiple queries to run safely.
 
 9. Starting and committing a transaction
-
+----------------------------------------------
 sql
 START TRANSACTION;
 DELETE FROM employees WHERE department = 'HR';
@@ -417,7 +417,7 @@ COMMIT;
 Ensures the deletion is only committed once all steps are successful.
 
 10. Rolling back a transaction
-
+-----------------------------------------
 sql
 START TRANSACTION;
 UPDATE employees SET salary = 100000 WHERE department = 'IT';
