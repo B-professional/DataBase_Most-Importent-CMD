@@ -1,7 +1,7 @@
 
 # 🛠️ Oracle Database Commands Cheat Sheet
 
-A comprehensive guide for ## Oracle SQL and DBA tasks. Includes user management, performance tuning, backup, and real-world scripts—ideal for support engineers and interview prep.
+A comprehensive guide for ## Oracle SQL and DBA tasks. Includes user management, performance tuning, backup, and real-world scripts—ideal for support engineers and interview prep...
 
 ---
 
