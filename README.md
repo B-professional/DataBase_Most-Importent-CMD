@@ -30,7 +30,7 @@ A comprehensive guide for ## Oracle SQL and DBA tasks. Includes user management,
 CREATE USER test_user IDENTIFIED BY password;
 GRANT CONNECT, RESOURCE TO test_user;
 REVOKE RESOURCE FROM test_user;
-DROP USER test_user CASCADE;
+DROP USER test_user CASCADE;...
 ```
 
 ---
